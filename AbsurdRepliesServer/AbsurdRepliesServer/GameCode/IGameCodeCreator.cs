@@ -2,8 +2,8 @@
 
 namespace AbsurdRepliesServer.GameCode
 {
-    public interface IGameFinder
+    public interface IGameCodeCreator
     {
-        Task<bool> CanFindGame(string gameCode);
+        Task<string> CreateGameCode();
     }
 }

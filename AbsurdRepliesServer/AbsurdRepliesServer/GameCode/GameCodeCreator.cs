@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
+using static AbsurdRepliesServer.Infrastructure.ArgumentValidator;
 
 namespace AbsurdRepliesServer.GameCode
 {
-    public class GameCodeCreator
+    public class GameCodeCreator : IGameCodeCreator
     {
         private readonly IGameFinder _gameFinder;
         private readonly Random _random;
 
-        private static readonly char[] AllowedChars = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'}; 
-
-        internal GameCodeCreator(IGameFinder gameFinder)
+        public GameCodeCreator(IGameFinder gameFinder)
         {
-            _gameFinder = gameFinder ?? throw new ArgumentException($"nameof(gameFinder) not provided");
+            _gameFinder = ValidateArgumentNotNull(gameFinder, nameof(gameFinder));
             
             _random = new Random();
         }
