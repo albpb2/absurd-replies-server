@@ -20,6 +20,8 @@ namespace AbsurdRepliesServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            services.AddSwaggerGen();
 
             services.AddSingleton<IGameFinder, NullGameFinder>();
             services.AddSingleton<IGameCodeCreator, GameCodeCreator>();
@@ -40,6 +42,17 @@ namespace AbsurdRepliesServer
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
         }
     }
 }
