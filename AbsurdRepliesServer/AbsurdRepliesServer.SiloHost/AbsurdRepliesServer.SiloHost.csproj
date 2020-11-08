@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>dotnet-AbsurdRepliesServer.SiloHost-29A109CB-DD5D-4749-BECA-A531890D8613</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+        <PackageReference Include="Microsoft.Orleans.CodeGenerator.MSBuild" Version="3.3.0" />
+        <PackageReference Include="Microsoft.Orleans.Core" Version="3.3.0" />
+        <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="3.3.0" />
+        <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AbsurdRepliesServer.Grains\AbsurdRepliesServer.Grains.csproj" />
+    </ItemGroup>
+</Project>

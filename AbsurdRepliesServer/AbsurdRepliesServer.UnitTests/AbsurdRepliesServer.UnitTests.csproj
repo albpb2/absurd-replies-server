@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AbsurdRepliesServer\AbsurdRepliesServer.csproj" />
+      <ProjectReference Include="..\AbsurdRepliesServer.WebApi\AbsurdRepliesServer.WebApi.csproj" />
     </ItemGroup>
 
 </Project>

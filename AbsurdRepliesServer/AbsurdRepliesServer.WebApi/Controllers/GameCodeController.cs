@@ -3,7 +3,7 @@ using AbsurdRepliesServer.GameCode;
 using Microsoft.AspNetCore.Mvc;
 using static AbsurdRepliesServer.Infrastructure.ArgumentValidator;
 
-namespace AbsurdRepliesServer.Controllers
+namespace AbsurdRepliesServer.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
