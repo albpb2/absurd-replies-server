@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsurdRepliesServer.Orleans
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsurdRepliesServer", "AbsurdRepliesServer\AbsurdRepliesServer.csproj", "{21030853-06B6-490A-8EBF-4F1D8EA59F10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsurdRepliesServer.Commands", "AbsurdRepliesServer.Commands\AbsurdRepliesServer.Commands.csproj", "{57AFD2D4-2CDF-4020-9C1F-C200935D1843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsurdRepliesServer.Infrastructure", "AbsurdRepliesServer.Infrastructure\AbsurdRepliesServer.Infrastructure.csproj", "{1B49790B-B8F4-47EE-989F-6094D3638024}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{21030853-06B6-490A-8EBF-4F1D8EA59F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21030853-06B6-490A-8EBF-4F1D8EA59F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21030853-06B6-490A-8EBF-4F1D8EA59F10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57AFD2D4-2CDF-4020-9C1F-C200935D1843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57AFD2D4-2CDF-4020-9C1F-C200935D1843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57AFD2D4-2CDF-4020-9C1F-C200935D1843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57AFD2D4-2CDF-4020-9C1F-C200935D1843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B49790B-B8F4-47EE-989F-6094D3638024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B49790B-B8F4-47EE-989F-6094D3638024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B49790B-B8F4-47EE-989F-6094D3638024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B49790B-B8F4-47EE-989F-6094D3638024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

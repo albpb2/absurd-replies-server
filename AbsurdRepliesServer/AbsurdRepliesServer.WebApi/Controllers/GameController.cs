@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using AbsurdRepliesServer.Game;
-using AbsurdRepliesServer.WebApi.Game.Dtos;
+using AbsurdRepliesServer.Commands.Game;
+using AbsurdRepliesServer.Infrastructure.Commands;
 using Microsoft.AspNetCore.Mvc;
 using static AbsurdRepliesServer.Infrastructure.ArgumentValidator;
 
@@ -10,14 +10,14 @@ namespace AbsurdRepliesServer.WebApi.Controllers
     [Route("[controller]")]
     public class GameController
     {
-        private readonly IGameCreator _gameCreator;
+        private readonly CommandBus _commandBus;
 
-        public GameController(IGameCreator gameCreator)
+        public GameController(CommandBus commandBus)
         {
-            _gameCreator = ValidateArgumentNotNull(gameCreator, nameof(gameCreator));
+            _commandBus = ValidateArgumentNotNull(commandBus, nameof(commandBus));
         }
         
         [HttpPost]
-        public async Task<GameDto> CreateGame() => GameDto.FromGame(await _gameCreator.CreateGame());
+        public Task CreateGame() => _commandBus.HandleCommand(new CreateGameCommand());
     }
 }
