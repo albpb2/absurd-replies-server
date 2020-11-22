@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using AbsurdRepliesServer.Game;
 using AbsurdRepliesServer.GameCode;
 using Microsoft.AspNetCore.Mvc;
 using static AbsurdRepliesServer.Infrastructure.ArgumentValidator;
@@ -11,12 +12,12 @@ namespace AbsurdRepliesServer.WebApi.Controllers
     {
         private readonly IGameCodeCreator _gameCodeCreator;
 
-        public GameCodeController(IGameCodeCreator gameCodeCreator)
+        public GameCodeController(IGameCodeCreator gameCodeCreator, IGameCreator gameCreator)
         {
             _gameCodeCreator = ValidateArgumentNotNull(gameCodeCreator, nameof(gameCodeCreator));
         }
 
-        [HttpGet]
+        [HttpPost]
         public Task<string> CreateGameCode() => _gameCodeCreator.CreateGameCode();
     }
 }

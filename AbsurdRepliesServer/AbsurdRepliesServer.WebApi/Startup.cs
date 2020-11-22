@@ -1,9 +1,12 @@
+using AbsurdRepliesServer.Game;
 using AbsurdRepliesServer.GameCode;
+using AbsurdRepliesServer.OrleansClient.Game;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Orleans;
 
 namespace AbsurdRepliesServer.WebApi
 {
@@ -22,9 +25,13 @@ namespace AbsurdRepliesServer.WebApi
             services.AddControllers();
             
             services.AddSwaggerGen();
+            
+            services.AddSingleton<IClusterClient>(provider => OrleansClient.OrleansClient.Initialize().Result);
 
             services.AddSingleton<IGameFinder, NullGameFinder>();
             services.AddSingleton<IGameCodeCreator, GameCodeCreator>();
+            services.AddSingleton<IGameResolver, GameResolver>();
+            services.AddSingleton<IGameCreator, GameCreator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AbsurdRepliesServer.OrleansClient\AbsurdRepliesServer.OrleansClient.csproj" />
       <ProjectReference Include="..\AbsurdRepliesServer\AbsurdRepliesServer.csproj" />
     </ItemGroup>
 
