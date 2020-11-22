@@ -4,19 +4,17 @@ using AbsurdRepliesServer.GameCode;
 using AbsurdRepliesServer.Grains.Game;
 using Orleans;
 
-namespace AbsurdRepliesServer.Orleans.Game
+namespace AbsurdRepliesServer.OrleansClient.Game
 {
     public class GameResolver : IGameResolver
     {
-        private readonly IGrainFactory _grainFactory;
-        private readonly IGameCodeCreator _gameCodeCreator;
+        private readonly IClusterClient _client;
         
-        public GameResolver(IGrainFactory grainFactory, IGameCodeCreator gameCodeCreator)
+        public GameResolver(IClusterClient client, IGameCodeCreator gameCodeCreator)
         {
-            _grainFactory = grainFactory;
-            _gameCodeCreator = gameCodeCreator;
+            _client = client;
         }
 
-        public Task<IGame> GetOrCreateGame(string gameId) => _grainFactory.GetGrain<IGameGrain>(gameId).GetGame();
+        public Task<IGame> GetOrCreateGame(string gameId) => _client.GetGrain<IGameGrain>(gameId).GetGame();
     }
 }
